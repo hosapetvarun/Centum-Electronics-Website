@@ -1,0 +1,2220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Centum Electronics Limited – Precision Fastening Solutions</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #0B1F3A;
+            --navy-light: #1a3f5e;
+            --navy-dark: #071525;
+            --gold: #EAB308;
+            --gold-light: #facc15;
+            --gray: #f1f5f9;
+            --gray-dark: #94a3b8;
+            --white: #ffffff;
+            --shadow-sm: 0 4px 20px rgba(11, 31, 58, 0.08);
+            --shadow-md: 0 12px 40px rgba(11, 31, 58, 0.12);
+            --shadow-lg: 0 24px 60px rgba(11, 31, 58, 0.18);
+            --radius: 20px;
+            --radius-sm: 12px;
+            --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--white);
+            color: #1e293b;
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--gray);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--navy);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--navy-light);
+        }
+
+        /* ============================================
+           HEADER
+        ============================================ */
+        .header {
+            background: var(--navy);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid rgba(234, 179, 8, 0.15);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.08);
+            transition: box-shadow 0.3s;
+        }
+
+        .header.scrolled {
+            box-shadow: 0 4px 30px rgba(0,0,0,0.2);
+        }
+
+        .header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-shrink: 0;
+        }
+
+        .logo-container {
+            flex-shrink: 0;
+            width: 70px;
+            height: 70px;
+            background: #ffffff;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            padding: 12px;
+        }
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+        .brand-text .main-name {
+            font-size: 28px;
+            font-weight: 700;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+        .brand-text .sub-name {
+            font-size: 13px;
+            font-weight: 500;
+            color: #B7C2D0;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+        .header-nav a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+            cursor: pointer;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s;
+        }
+        .header-nav a:hover { color: #fff; }
+        .header-nav a:hover::after { width: 100%; }
+
+        .header-nav .btn-nav {
+            padding: 6px 20px;
+            border-radius: 40px;
+            background: var(--gold);
+            color: var(--navy);
+            font-weight: 600;
+            font-size: 0.8rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .header-nav .btn-nav:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(234,179,8,0.25);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+        .hamburger span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background: #fff;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 300px;
+            height: 100vh;
+            background: var(--navy);
+            padding: 80px 30px 30px;
+            transition: right 0.4s ease;
+            z-index: 1001;
+            box-shadow: -8px 0 40px rgba(0,0,0,0.2);
+        }
+        .mobile-menu.open { right: 0; }
+        .mobile-menu a {
+            display: block;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+        .mobile-menu a:hover { color: var(--gold); }
+        .mobile-menu .btn-nav {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 30px;
+            background: var(--gold);
+            color: var(--navy);
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .menu-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            display: none;
+        }
+        .menu-overlay.active { display: block; }
+
+        /* ============================================
+           HERO
+        ============================================ */
+        .hero {
+            min-height: 85vh;
+            background: linear-gradient(145deg, var(--navy-dark) 0%, var(--navy) 40%, var(--navy-light) 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 40px 0;
+        }
+
+        .hero-bg-logo {
+            position: absolute;
+            top: 50%;
+            right: 5%;
+            transform: translateY(-50%);
+            width: 500px;
+            height: 500px;
+            opacity: 0.04;
+            pointer-events: none;
+            background-image: url('logo/centum logo real.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            z-index: 0;
+        }
+
+        .hero-shapes {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .hero-shapes .shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(234,179,8,0.04);
+            animation: floatShape 20s infinite ease-in-out;
+        }
+        .hero-shapes .shape:nth-child(1) {
+            width: 600px;
+            height: 600px;
+            top: -200px;
+            right: -100px;
+        }
+        .hero-shapes .shape:nth-child(2) {
+            width: 400px;
+            height: 400px;
+            bottom: -100px;
+            left: -50px;
+            animation-delay: -5s;
+            background: rgba(234,179,8,0.02);
+        }
+        .hero-shapes .shape:nth-child(3) {
+            width: 200px;
+            height: 200px;
+            top: 50%;
+            right: 30%;
+            animation-delay: -10s;
+            background: rgba(234,179,8,0.03);
+        }
+        @keyframes floatShape {
+            0%,100% { transform: translate(0,0) scale(1); }
+            33% { transform: translate(30px,-40px) scale(1.05); }
+            66% { transform: translate(-20px,20px) scale(0.95); }
+        }
+
+        .hero .container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            flex: 1 1 48%;
+            color: #fff;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(234,179,8,0.15);
+            border: 1px solid rgba(234,179,8,0.2);
+            padding: 6px 16px 6px 12px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--gold-light);
+            letter-spacing: 0.5px;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+        }
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.08;
+            letter-spacing: -1.5px;
+            margin-bottom: 12px;
+        }
+        .hero-content h1 .highlight { color: var(--gold); position: relative; }
+        .hero-content h1 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: rgba(234,179,8,0.25);
+            border-radius: 10px;
+        }
+        .hero-content .sub {
+            font-size: 1.15rem;
+            opacity: 0.75;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+        }
+        .hero-content p {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            max-width: 520px;
+            margin: 16px 0 32px;
+            line-height: 1.7;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 36px;
+            border-radius: 40px;
+            background: var(--gold);
+            color: var(--navy);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(234,179,8,0.35);
+        }
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 36px;
+            border-radius: 40px;
+            background: transparent;
+            color: #fff;
+            font-weight: 500;
+            text-decoration: none;
+            font-size: 0.95rem;
+            border: 1.5px solid rgba(255,255,255,0.3);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .hero-visual {
+            flex: 1 1 48%;
+            position: relative;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-glow {
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, transparent 70%);
+            top: 50%;
+            right: 0%;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+        .composition {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            perspective: 1200px;
+        }
+        .composition-main {
+            width: 100%;
+            mask-image: radial-gradient(ellipse at 50% 50%, black 55%, transparent 85%);
+            -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 55%, transparent 85%);
+            animation: floatComposition 8s ease-in-out infinite;
+            transform-style: preserve-3d;
+            transition: transform 0.1s ease-out;
+        }
+        .composition-main img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .composition-main::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 60%, rgba(255,255,255,0.1) 100%);
+            pointer-events: none;
+            mix-blend-mode: overlay;
+            mask-image: radial-gradient(ellipse at 50% 50%, black 55%, transparent 85%);
+            -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 55%, transparent 85%);
+        }
+        .composition-main::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 70% 20%, rgba(59,130,246,0.25) 0%, transparent 70%);
+            pointer-events: none;
+            mix-blend-mode: screen;
+            mask-image: radial-gradient(ellipse at 50% 50%, black 55%, transparent 85%);
+            -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 55%, transparent 85%);
+        }
+        @keyframes floatComposition {
+            0%,100% { transform: translateY(0) rotateX(0) rotateY(0); }
+            33% { transform: translateY(-10px) rotateX(1.5deg) rotateY(0.8deg); }
+            66% { transform: translateY(8px) rotateX(-0.8deg) rotateY(-0.5deg); }
+        }
+
+        .hero-layer {
+            position: absolute;
+            pointer-events: none;
+            animation: floatLayer 10s ease-in-out infinite;
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3));
+        }
+        .hero-layer img { width: 100%; height: auto; display: block; }
+        .hero-layer-1 { width: 100px; top: 10%; right: 5%; z-index: 3; animation-delay: -1s; }
+        .hero-layer-2 { width: 80px; bottom: 15%; left: 5%; animation-delay: -4s; }
+        .hero-layer-3 { width: 70px; top: 40%; left: 2%; animation-delay: -7s; opacity: 0.6; }
+        .hero-layer-4 { width: 80px; bottom: 30%; right: 2%; animation-delay: -2s; z-index: 3; }
+        @keyframes floatLayer {
+            0%,100% { transform: translateY(0) rotate(0); }
+            33% { transform: translateY(-12px) rotate(3deg); }
+            66% { transform: translateY(8px) rotate(-2deg); }
+        }
+
+        .engineering-lines {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.25;
+            z-index: 0;
+        }
+        .particles {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(234,179,8,0.3);
+            box-shadow: 0 0 12px rgba(234,179,8,0.15);
+            animation: floatParticle 12s infinite ease-in-out;
+        }
+        .particle:nth-child(1) { width: 6px; height: 6px; top: 15%; left: 10%; animation-delay: 0s; }
+        .particle:nth-child(2) { width: 4px; height: 4px; top: 25%; right: 15%; animation-delay: -3s; }
+        .particle:nth-child(3) { width: 5px; height: 5px; bottom: 30%; left: 5%; animation-delay: -6s; }
+        .particle:nth-child(4) { width: 4px; height: 4px; bottom: 20%; right: 8%; animation-delay: -9s; }
+        .particle:nth-child(5) { width: 7px; height: 7px; top: 50%; left: 50%; animation-delay: -2s; background: rgba(59,130,246,0.2); box-shadow: 0 0 20px rgba(59,130,246,0.1); }
+        @keyframes floatParticle {
+            0%,100% { transform: translate(0,0) scale(1); opacity: 0.3; }
+            25% { transform: translate(30px,-20px) scale(1.4); opacity: 0.8; }
+            50% { transform: translate(-20px,40px) scale(0.8); opacity: 0.5; }
+            75% { transform: translate(15px,-30px) scale(1.2); opacity: 0.7; }
+        }
+
+        /* ============================================
+           SHOWCASE SECTIONS
+        ============================================ */
+        .showcase-section {
+            padding: 80px 0 40px;
+            background: var(--white);
+            position: relative;
+        }
+        .showcase-section.dark {
+            background: var(--navy);
+            color: #fff;
+        }
+        .showcase-section.dark .section-sub { color: rgba(255,255,255,0.6); }
+        .showcase-section.dark::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.02) 1px, transparent 1px), radial-gradient(circle at 80px 80px, rgba(255,255,255,0.01) 1px, transparent 1px);
+            background-size: 40px 40px, 80px 80px;
+            pointer-events: none;
+        }
+        .showcase-section .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .showcase-section .section-header h2 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            display: inline-block;
+            position: relative;
+        }
+        .showcase-section .section-header h2 span { color: var(--gold); }
+        .showcase-section .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 4px;
+        }
+        .showcase-section .section-header p {
+            color: var(--gray-dark);
+            font-size: 1.05rem;
+            max-width: 560px;
+            margin: 16px auto 0;
+        }
+        .showcase-section.dark .section-header h2 { color: #fff; }
+        .showcase-section.dark .section-header p { color: rgba(255,255,255,0.6); }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        .category-block {
+            background: rgba(255,255,255,0.04);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(11,31,58,0.06);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            min-height: 320px;
+        }
+        .category-block:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(234,179,8,0.15);
+        }
+        .showcase-section.dark .category-block {
+            background: rgba(255,255,255,0.04);
+            border-color: rgba(255,255,255,0.06);
+        }
+        .showcase-section.dark .category-block:hover { border-color: rgba(234,179,8,0.2); }
+        .category-block:nth-child(odd) .block-image { order: 1; }
+        .category-block:nth-child(odd) .block-content { order: 2; }
+        .category-block:nth-child(even) .block-image { order: 2; }
+        .category-block:nth-child(even) .block-content { order: 1; }
+        .category-block .block-image {
+            flex: 0 0 48%;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+            background: var(--gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .showcase-section.dark .category-block .block-image { background: rgba(255,255,255,0.04); }
+        .category-block .block-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .category-block:hover .block-image img { transform: scale(1.04); }
+        .category-block .block-image .badge-tag {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: rgba(11,31,58,0.8);
+            backdrop-filter: blur(4px);
+            color: #fff;
+            font-size: 0.6rem;
+            font-weight: 600;
+            padding: 4px 14px;
+            border-radius: 40px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            z-index: 2;
+        }
+        .showcase-section.dark .category-block .block-image .badge-tag {
+            background: rgba(234,179,8,0.85);
+            color: var(--navy);
+        }
+        .category-block .block-content {
+            flex: 1;
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .category-block .block-content h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            margin-bottom: 6px;
+        }
+        .category-block .block-content .block-desc {
+            font-size: 0.95rem;
+            opacity: 0.75;
+            line-height: 1.6;
+            margin-bottom: 14px;
+        }
+        .showcase-section.dark .category-block .block-content .block-desc { color: rgba(255,255,255,0.7); }
+        .category-block .block-content .block-bullets {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px 16px;
+            margin-bottom: 14px;
+        }
+        .category-block .block-content .block-bullets li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            padding: 2px 0;
+            list-style: none;
+        }
+        .category-block .block-content .block-bullets li i {
+            color: var(--gold);
+            font-size: 0.7rem;
+            width: 16px;
+        }
+        .showcase-section.dark .category-block .block-content .block-bullets li { color: rgba(255,255,255,0.8); }
+        .category-block .block-content .block-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+        .category-block .block-content .block-tags span {
+            padding: 2px 12px;
+            border-radius: 40px;
+            font-size: 0.65rem;
+            font-weight: 500;
+            background: rgba(11,31,58,0.06);
+            border: 1px solid rgba(11,31,58,0.04);
+            color: #475569;
+        }
+        .showcase-section.dark .category-block .block-content .block-tags span {
+            background: rgba(255,255,255,0.06);
+            border-color: rgba(255,255,255,0.04);
+            color: rgba(255,255,255,0.7);
+        }
+        .category-block .block-content .block-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: auto;
+            padding-top: 12px;
+            border-top: 1px solid rgba(11,31,58,0.06);
+        }
+        .showcase-section.dark .category-block .block-content .block-footer { border-top-color: rgba(255,255,255,0.06); }
+        .category-block .block-content .block-footer .stat {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.8rem;
+            color: var(--gray-dark);
+        }
+        .showcase-section.dark .category-block .block-content .block-footer .stat { color: rgba(255,255,255,0.5); }
+        .category-block .block-content .block-footer .stat i { color: var(--gold); }
+
+        .btn-category {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 24px;
+            border-radius: 40px;
+            background: var(--navy);
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-category:hover {
+            background: var(--gold);
+            color: var(--navy);
+            transform: translateX(4px);
+        }
+        .showcase-section.dark .btn-category {
+            background: var(--gold);
+            color: var(--navy);
+        }
+        .showcase-section.dark .btn-category:hover {
+            background: var(--gold-light);
+            color: var(--navy);
+        }
+
+        /* ============================================
+           PRODUCT GRID
+        ============================================ */
+        .products-grid-section {
+            padding: 60px 0 80px;
+            background: var(--white);
+        }
+        .products-grid-section .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 24px;
+        }
+        .product-card {
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(11,31,58,0.06);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(11,31,58,0.2), 0 0 0 2px rgba(234,179,8,0.2);
+        }
+        .product-card .image-wrap {
+            height: 210px;
+            background: linear-gradient(145deg, #e2e8f0, #cbd5e1);
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .product-card .image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .product-card:hover .image-wrap img { transform: scale(1.06); }
+        .product-card .badge-stock {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(34,197,94,0.9);
+            color: #fff;
+            font-size: 0.55rem;
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 40px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            backdrop-filter: blur(4px);
+        }
+        .product-card .badge-category {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(11,31,58,0.75);
+            backdrop-filter: blur(4px);
+            color: #fff;
+            font-size: 0.5rem;
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 40px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .product-card .info {
+            padding: 14px 16px 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-card .info h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 2px;
+            line-height: 1.3;
+        }
+        .product-card .info .sku {
+            font-size: 0.7rem;
+            color: var(--gray-dark);
+            margin-bottom: 4px;
+        }
+        .product-card .info .desc {
+            font-size: 0.75rem;
+            color: #475569;
+            margin-bottom: 10px;
+            line-height: 1.4;
+            flex: 1;
+        }
+        .product-card .info .card-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+            margin-top: auto;
+        }
+        .product-card .info .btn-sm {
+            padding: 5px 14px;
+            border-radius: 40px;
+            background: var(--navy);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .product-card .info .btn-sm:hover {
+            background: var(--gold);
+            color: var(--navy);
+        }
+        .product-card .info .spec-toggle {
+            font-size: 0.7rem;
+            color: var(--gray-dark);
+            cursor: pointer;
+            transition: color 0.3s;
+            background: none;
+            border: none;
+        }
+        .product-card .info .spec-toggle:hover { color: var(--gold); }
+
+        .no-products {
+            text-align: center;
+            padding: 60px 0;
+            color: var(--gray-dark);
+            font-size: 1.1rem;
+            grid-column: 1 / -1;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1.5px solid var(--navy);
+            background: var(--white);
+            color: var(--navy);
+            cursor: pointer;
+            transition: all 0.3s;
+            letter-spacing: 0.3px;
+        }
+        .filter-btn:hover {
+            border-color: var(--gold);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .filter-btn.active {
+            background: var(--gold);
+            color: var(--white);
+            border-color: var(--gold);
+            box-shadow: 0 4px 16px rgba(234,179,8,0.3);
+            transform: scale(1.02);
+        }
+
+        /* ============================================
+           MODALS (ADDED FOR BUG FIXES)
+        ============================================ */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.65);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+        .modal-box {
+            background: #fff;
+            border-radius: var(--radius);
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 30px;
+            position: relative;
+            transform: scale(0.95);
+            transition: transform 0.3s;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+        }
+        .modal-overlay.active .modal-box { transform: scale(1); }
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #94a3b8;
+            transition: color 0.3s;
+            line-height: 1;
+        }
+        .modal-close:hover { color: #1e293b; }
+        .modal-box h3 { font-size: 1.6rem; font-weight: 700; margin-bottom: 10px; }
+        .modal-box .modal-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 16px;
+        }
+        .modal-box .modal-grid .label { font-weight: 600; color: #475569; }
+        .modal-box .modal-grid .value { color: #1e293b; }
+        .modal-box .modal-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+            border-radius: var(--radius-sm);
+            background: #f1f5f9;
+            margin-bottom: 16px;
+        }
+        .modal-box .modal-stock {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        /* Image Preview Modal */
+        .image-preview-modal .modal-box {
+            max-width: 900px;
+            background: transparent;
+            box-shadow: none;
+            padding: 0;
+        }
+        .image-preview-modal .modal-box .preview-image {
+            width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: var(--radius-sm);
+            background: rgba(0,0,0,0.3);
+        }
+        .image-preview-modal .modal-box .preview-controls {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            pointer-events: none;
+        }
+        .image-preview-modal .modal-box .preview-controls button {
+            pointer-events: auto;
+            background: rgba(0,0,0,0.5);
+            color: #fff;
+            border: none;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            font-size: 1.4rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .image-preview-modal .modal-box .preview-controls button:hover {
+            background: rgba(0,0,0,0.8);
+        }
+        .image-preview-modal .modal-box .preview-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.5);
+            color: #fff;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            z-index: 10;
+        }
+        .image-preview-modal .modal-box .preview-close:hover {
+            background: rgba(0,0,0,0.8);
+        }
+
+        /* ============================================
+           BRANDS, APPLICATIONS, WHY, FOOTER
+        ============================================ */
+        .brands-bar {
+            padding: 40px 0;
+            background: var(--gray);
+            border-top: 1px solid rgba(11,31,58,0.04);
+            border-bottom: 1px solid rgba(11,31,58,0.04);
+            overflow: hidden;
+        }
+        .brands-bar .container { max-width: 100%; padding: 0; }
+        .brands-bar .marquee {
+            display: flex;
+            gap: 60px;
+            animation: marquee 30s linear infinite;
+            width: max-content;
+            padding: 0 30px;
+        }
+        .brands-bar .marquee-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--navy);
+            opacity: 0.5;
+            white-space: nowrap;
+        }
+        .brands-bar .marquee-item i { color: var(--gold); }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .applications-section {
+            padding: 70px 0;
+            background: var(--gray);
+        }
+        .applications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 20px;
+            margin-top: 32px;
+        }
+        .app-card {
+            background: var(--white);
+            padding: 24px 16px;
+            border-radius: var(--radius-sm);
+            text-align: center;
+            border: 1px solid rgba(11,31,58,0.04);
+            transition: all 0.3s;
+            box-shadow: var(--shadow-sm);
+        }
+        .app-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(234,179,8,0.15);
+        }
+        .app-card i { font-size: 1.8rem; color: var(--gold); margin-bottom: 8px; display: block; }
+        .app-card h4 { font-size: 0.9rem; font-weight: 600; }
+        .app-card p { font-size: 0.75rem; color: var(--gray-dark); margin-top: 4px; }
+
+        .why-section {
+            padding: 70px 0;
+            background: var(--navy);
+            color: #fff;
+        }
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 28px;
+            margin-top: 32px;
+        }
+        .why-item { text-align: center; padding: 16px; }
+        .why-item .number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--gold);
+            letter-spacing: -1px;
+            line-height: 1;
+        }
+        .why-item .label { font-size: 0.9rem; opacity: 0.7; margin-top: 6px; }
+        .why-item .desc { font-size: 0.8rem; opacity: 0.5; margin-top: 4px; }
+
+        .footer {
+            background: var(--navy-dark);
+            color: rgba(255,255,255,0.7);
+            padding: 50px 0 24px;
+            border-top: 3px solid var(--gold);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer h4 { color: #fff; font-size: 0.9rem; font-weight: 600; margin-bottom: 14px; letter-spacing: 0.5px; }
+        .footer ul { list-style: none; }
+        .footer ul li { margin-bottom: 8px; }
+        .footer ul a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+        .footer ul a:hover { color: var(--gold); }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.3);
+        }
+        .footer-bottom a { color: rgba(255,255,255,0.4); text-decoration: none; cursor: pointer; }
+        .footer-bottom a:hover { color: var(--gold); }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 100;
+            background: var(--gold);
+            color: var(--navy);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 8px 24px rgba(234,179,8,0.3);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s;
+            pointer-events: none;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        .back-to-top:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 32px rgba(234,179,8,0.4);
+        }
+
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--gold);
+            z-index: 1002;
+            width: 0%;
+            transition: width 0.1s;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--navy);
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            opacity: 0;
+            transition: all 0.4s;
+            z-index: 2000;
+            pointer-events: none;
+        }
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* ============================================
+           RESPONSIVE (FIX ONLY BROKEN LAYOUTS)
+        ============================================ */
+        @media (max-width: 1200px) { .product-grid { grid-template-columns: repeat(4,1fr); } }
+        @media (max-width: 1024px) {
+            .header .container { flex-wrap: wrap; }
+            .hero-content h1 { font-size: 3rem; }
+            .showcase-grid { gap: 40px; }
+            .category-block .block-image { height: 240px; flex: 0 0 45%; }
+            .product-grid { grid-template-columns: repeat(3,1fr); }
+        }
+        @media (max-width: 768px) {
+            .container { padding: 0 20px; }
+            .header-left { gap: 16px; }
+            .brand-text .main-name { font-size: 20px; }
+            .brand-text .sub-name { font-size: 11px; letter-spacing: 4px; }
+            .logo-container { width: 54px; height: 54px; padding: 8px; }
+            .header-nav { display: none; }
+            .hamburger { display: flex; }
+            .hero { min-height: auto; padding: 40px 0; }
+            .hero .container { flex-direction: column; text-align: center; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .hero-content p { margin-left: auto; margin-right: auto; }
+            .hero-buttons { justify-content: center; }
+            .hero-visual { min-height: 300px; width: 100%; }
+            .composition-main { max-width: 400px; }
+            .hero-layer-1 { width: 70px; }
+            .hero-layer-2 { width: 60px; }
+            .hero-layer-3 { width: 50px; }
+            .hero-layer-4 { width: 60px; }
+            .showcase-section { padding: 50px 0 20px; }
+            .showcase-grid { grid-template-columns: 1fr; gap: 32px; }
+            .category-block { flex-direction: column; }
+            .category-block .block-image { flex: 0 0 auto; width: 100%; height: 200px; order: 1 !important; }
+            .category-block .block-content { order: 2 !important; padding: 20px 24px; }
+            .category-block .block-content .block-bullets { grid-template-columns: 1fr; }
+            .product-grid { grid-template-columns: repeat(2,1fr); gap: 16px; }
+            .product-card .image-wrap { height: 140px; }
+            .products-grid-section .section-header { flex-direction: column; align-items: flex-start; }
+            .filter-buttons { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 4px; gap: 6px; }
+            .filter-btn { flex-shrink: 0; padding: 6px 14px; font-size: 0.7rem; }
+            .applications-grid { grid-template-columns: repeat(auto-fit, minmax(130px,1fr)); }
+            .why-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+            .why-item .number { font-size: 2.2rem; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+            .modal-box { padding: 20px; }
+            .modal-box .modal-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 480px) {
+            .brand-text .main-name { font-size: 18px; }
+            .brand-text .sub-name { font-size: 10px; letter-spacing: 3px; }
+            .logo-container { width: 48px; height: 48px; padding: 6px; }
+            .hero-content h1 { font-size: 1.8rem; }
+            .hero-buttons .btn-primary,
+            .hero-buttons .btn-secondary { padding: 10px 24px; font-size: 0.8rem; width: 100%; justify-content: center; }
+            .hero-buttons { flex-direction: column; width: 100%; }
+            .composition-main { max-width: 280px; }
+            .product-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+            .product-card .image-wrap { height: 120px; }
+            .product-card .info { padding: 10px 12px 12px; }
+            .product-card .info .desc { font-size: 0.7rem; }
+            .product-card .info .btn-sm { font-size: 0.6rem; padding: 4px 10px; }
+            .showcase-section .section-header h2 { font-size: 1.8rem; }
+            .category-block .block-content h3 { font-size: 1.3rem; }
+            .category-block .block-content .block-footer { flex-direction: column; align-items: stretch; }
+            .category-block .block-content .block-footer .stat { justify-content: center; }
+            .btn-category { justify-content: center; }
+            .why-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== SCROLL PROGRESS ===== -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header" id="header" role="banner">
+        <div class="container">
+            <div class="header-left">
+                <div class="logo-container">
+                    <img src="logo/centum-logo.jpeg" alt="Centum Electronics Limited" loading="eager" />
+                </div>
+                <div class="brand-text">
+                    <span class="main-name">CENTUM ELECTRONICS</span>
+                    <span class="sub-name">LIMITED</span>
+                </div>
+            </div>
+            <nav class="header-nav" aria-label="Main navigation">
+                <a href="#products" data-section="products" class="nav-link">Products</a>
+                <a href="#applications" data-section="applications" class="nav-link">Applications</a>
+                <a href="#why" data-section="why" class="nav-link">Why Us</a>
+                <a href="#products" class="btn-nav">eShop</a>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ===== MOBILE MENU ===== -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+        <a href="#products" data-section="products" class="nav-link">Products</a>
+        <a href="#applications" data-section="applications" class="nav-link">Applications</a>
+        <a href="#why" data-section="why" class="nav-link">Why Us</a>
+        <a href="#products" class="btn-nav">eShop</a>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero" aria-labelledby="hero-heading">
+        <div class="hero-bg-logo"></div>
+        <div class="hero-shapes"><div class="shape"></div><div class="shape"></div><div class="shape"></div></div>
+        <div class="hero-glow"></div>
+
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up">
+                <div class="hero-badge"><i class="fas fa-certificate"></i> ISO 9001:2024 Certified</div>
+                <div class="sub">Precision Fastening Solutions</div>
+                <h1 id="hero-heading">Engineered for<br /><span class="highlight">Modern Industries</span></h1>
+                <p>From automotive to aerospace, our precision fasteners deliver unmatched reliability, strength, and performance — backed by decades of engineering excellence.</p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn-primary" data-scroll="products">Explore Products <i class="fas fa-arrow-right"></i></a>
+                    <a href="#showcase1" class="btn-secondary" data-scroll="showcase1">View Categories <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+
+            <div class="hero-visual" data-aos="fade-left" data-aos-delay="200">
+                <div class="engineering-lines">
+                    <svg viewBox="0 0 600 500" fill="none"><circle cx="200" cy="180" r="120" stroke="rgba(234,179,8,0.08)" stroke-width="1"/><circle cx="200" cy="180" r="80" stroke="rgba(234,179,8,0.05)" stroke-width="1"/><circle cx="200" cy="180" r="40" stroke="rgba(234,179,8,0.03)" stroke-width="1"/><line x1="50" y1="400" x2="550" y2="400" stroke="rgba(255,255,255,0.02)" stroke-width="1"/><line x1="50" y1="350" x2="550" y2="350" stroke="rgba(255,255,255,0.02)" stroke-width="1"/><line x1="50" y1="300" x2="550" y2="300" stroke="rgba(255,255,255,0.015)" stroke-width="1"/><path d="M100 100 L200 50 L300 100 L400 50 L500 100" stroke="rgba(234,179,8,0.04)" stroke-width="1"/><path d="M100 150 L200 100 L300 150 L400 100 L500 150" stroke="rgba(234,179,8,0.03)" stroke-width="1"/><circle cx="100" cy="100" r="4" fill="rgba(234,179,8,0.06)"/><circle cx="500" cy="400" r="6" fill="rgba(234,179,8,0.06)"/><circle cx="300" cy="200" r="8" fill="rgba(234,179,8,0.04)"/></svg>
+                </div>
+                <div class="particles"><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div></div>
+
+                <div class="composition" id="composition">
+                    <div class="composition-main" id="compositionImage">
+                        <img src="logo/centum logo real.png" alt="Precision fasteners composition" loading="lazy" width="800" height="600" />
+                    </div>
+                    <div class="hero-layer hero-layer-1"><img src="screws/screw1.webp" alt="" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Crect fill=%22rgba(255,255,255,0.1)%22 width=%22100%22 height=%22100%22/%3E%3C/svg%3E'" /></div>
+                    <div class="hero-layer hero-layer-2"><img src="nuts/nuts1.webp" alt="" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22%3E%3Crect fill=%22rgba(255,255,255,0.1)%22 width=%2280%22 height=%2280%22/%3E%3C/svg%3E'" /></div>
+                    <div class="hero-layer hero-layer-3"><img src="washers/washer1.webp" alt="" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2270%22 height=%2270%22%3E%3Crect fill=%22rgba(255,255,255,0.1)%22 width=%2270%22 height=%2270%22/%3E%3C/svg%3E'" /></div>
+                    <div class="hero-layer hero-layer-4"><img src="pins/pins1.webp" alt="" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22%3E%3Crect fill=%22rgba(255,255,255,0.1)%22 width=%2280%22 height=%2280%22/%3E%3C/svg%3E'" /></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SHOWCASE PAGE 1 ===== -->
+    <section class="showcase-section" id="showcase1" aria-labelledby="showcase1-heading">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 id="showcase1-heading">Precision <span>Fastening</span> Solutions</h2>
+                <p>Engineered for reliability across every application</p>
+            </div>
+            <div class="showcase-grid">
+                <div class="category-block" data-aos="fade-right">
+                    <div class="block-image"><img src="screws/screw3.webp" alt="Precision Screws" loading="lazy" /><span class="badge-tag">Premium Grade</span></div>
+                    <div class="block-content">
+                        <h3>Screws</h3>
+                        <p class="block-desc">High‑strength threading solutions engineered for critical joints and permanent assemblies.</p>
+                        <ul class="block-bullets">
+                            <li><i class="fas fa-check-circle"></i> ISO Standard</li>
+                            <li><i class="fas fa-check-circle"></i> High Strength</li>
+                            <li><i class="fas fa-check-circle"></i> Corrosion Resistant</li>
+                            <li><i class="fas fa-check-circle"></i> Multiple Grades</li>
+                        </ul>
+                        <div class="block-tags"><span>Automotive</span><span>Railway</span><span>Defense</span><span>Construction</span></div>
+                        <div class="block-footer">
+                            <span class="stat"><i class="fas fa-cubes"></i> 500+ variants</span>
+                            <a href="#" class="btn-category" data-filter="screws">Explore <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="category-block" data-aos="fade-left" data-aos-delay="100">
+                    <div class="block-image"><img src="nuts/nuts2.webp" alt="Precision Nuts" loading="lazy" /><span class="badge-tag">Precision Machined</span></div>
+                    <div class="block-content">
+                        <h3>Nuts</h3>
+                        <p class="block-desc">Precision‑machined nuts for secure, vibration‑proof assemblies in demanding environments.</p>
+                        <ul class="block-bullets">
+                            <li><i class="fas fa-check-circle"></i> DIN · ISO · ANSI</li>
+                            <li><i class="fas fa-check-circle"></i> Nylon Insert</li>
+                            <li><i class="fas fa-check-circle"></i> Serrated Flange</li>
+                            <li><i class="fas fa-check-circle"></i> Metric &amp; Imperial</li>
+                        </ul>
+                        <div class="block-tags"><span>Automotive</span><span>Oil &amp; Gas</span><span>Energy</span><span>Construction</span></div>
+                        <div class="block-footer">
+                            <span class="stat"><i class="fas fa-cubes"></i> 300+ variants</span>
+                            <a href="#" class="btn-category" data-filter="nuts">Explore <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SHOWCASE PAGE 2 ===== -->
+    <section class="showcase-section dark" id="showcase2" aria-labelledby="showcase2-heading">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 id="showcase2-heading">Precision <span>Components</span></h2>
+                <p>Engineered for performance in every critical joint</p>
+            </div>
+            <div class="showcase-grid">
+                <div class="category-block" data-aos="fade-right">
+                    <div class="block-image"><img src="washers/washer3.webp" alt="Precision Washers" loading="lazy" /><span class="badge-tag">Load Distribution</span></div>
+                    <div class="block-content">
+                        <h3>Washers</h3>
+                        <p class="block-desc">Engineered to distribute load and prevent loosening under dynamic stress and vibration.</p>
+                        <ul class="block-bullets">
+                            <li><i class="fas fa-check-circle"></i> Load Distribution</li>
+                            <li><i class="fas fa-check-circle"></i> Locking Action</li>
+                            <li><i class="fas fa-check-circle"></i> Hardened Steel</li>
+                            <li><i class="fas fa-check-circle"></i> Precision Tolerances</li>
+                        </ul>
+                        <div class="block-tags"><span>Railway</span><span>Defense</span><span>Electronics</span><span>Construction</span></div>
+                        <div class="block-footer">
+                            <span class="stat"><i class="fas fa-cubes"></i> 400+ variants</span>
+                            <a href="#" class="btn-category" data-filter="washers">Explore <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="category-block" data-aos="fade-left" data-aos-delay="100">
+                    <div class="block-image"><img src="pins/pins3.webp" alt="Precision Pins" loading="lazy" /><span class="badge-tag">Precision Ground</span></div>
+                    <div class="block-content">
+                        <h3>Pins</h3>
+                        <p class="block-desc">Precision‑ground pins for alignment, hinge joints, and safety locking applications.</p>
+                        <ul class="block-bullets">
+                            <li><i class="fas fa-check-circle"></i> Hardened &amp; Ground</li>
+                            <li><i class="fas fa-check-circle"></i> Corrosion Resistant</li>
+                            <li><i class="fas fa-check-circle"></i> Custom Lengths</li>
+                            <li><i class="fas fa-check-circle"></i> Self‑Locking</li>
+                        </ul>
+                        <div class="block-tags"><span>Automotive</span><span>Aerospace</span><span>Defense</span><span>Oil &amp; Gas</span></div>
+                        <div class="block-footer">
+                            <span class="stat"><i class="fas fa-cubes"></i> 250+ variants</span>
+                            <a href="#" class="btn-category" data-filter="pins">Explore <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SHOWCASE PAGE 3 ===== -->
+    <section class="showcase-section" id="showcase3" aria-labelledby="showcase3-heading">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 id="showcase3-heading">Precision <span>Components</span> &amp; Featured</h2>
+                <p>Specialty fasteners and our most popular in‑stock items</p>
+            </div>
+            <div class="showcase-grid">
+                <div class="category-block" data-aos="fade-right">
+                    <div class="block-image"><img src="screws/screw1.webp" alt="Precision Components" loading="lazy" /><span class="badge-tag">Specialty</span></div>
+                    <div class="block-content">
+                        <h3>Precision Components</h3>
+                        <p class="block-desc">Custom‑engineered inserts, bushings, and specialty fasteners for unique applications.</p>
+                        <ul class="block-bullets">
+                            <li><i class="fas fa-check-circle"></i> Brass Inserts</li>
+                            <li><i class="fas fa-check-circle"></i> Flanged Bushings</li>
+                            <li><i class="fas fa-check-circle"></i> Custom Threads</li>
+                            <li><i class="fas fa-check-circle"></i> Engineered Solutions</li>
+                        </ul>
+                        <div class="block-tags"><span>Electronics</span><span>Medical</span><span>Aerospace</span><span>Defense</span></div>
+                        <div class="block-footer">
+                            <span class="stat"><i class="fas fa-cubes"></i> 150+ variants</span>
+                            <a href="#" class="btn-category" data-special="true">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="category-block" data-aos="fade-left" data-aos-delay="100">
+                    <div class="block-image"><img src="nuts/nuts4.webp" alt="Featured Products" loading="lazy" /><span class="badge-tag">Best Sellers</span></div>
+                    <div class="block-content">
+                        <h3>Featured Products</h3>
+                        <p class="block-desc">Our most popular fasteners – in stock and ready for immediate delivery.</p>
+                        <ul class="block-bullets">
+                            <li><i class="fas fa-check-circle"></i> High Demand</li>
+                            <li><i class="fas fa-check-circle"></i> Quick Ship</li>
+                            <li><i class="fas fa-check-circle"></i> Bulk Pricing</li>
+                            <li><i class="fas fa-check-circle"></i> Quality Assured</li>
+                        </ul>
+                        <div class="block-tags"><span>Automotive</span><span>Construction</span><span>Energy</span><span>Railway</span></div>
+                        <div class="block-footer">
+                            <span class="stat"><i class="fas fa-star"></i> Top 50 SKUs</span>
+                            <a href="#products" class="btn-category" data-scroll="products">View All <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BRANDS ===== -->
+    <section class="brands-bar" aria-label="Trusted brands and certifications">
+        <div class="container"><div class="marquee">
+            <span class="marquee-item"><i class="fas fa-certificate"></i> ISO 9001:2024</span>
+            <span class="marquee-item"><i class="fas fa-certificate"></i> IATF 16949</span>
+            <span class="marquee-item"><i class="fas fa-certificate"></i> AS9100D</span>
+            <span class="marquee-item"><i class="fas fa-shield-alt"></i> 200,000+ Products</span>
+            <span class="marquee-item"><i class="fas fa-truck"></i> Pan‑India Delivery</span>
+            <span class="marquee-item"><i class="fas fa-microchip"></i> Industry 4.0 Ready</span>
+            <span class="marquee-item"><i class="fas fa-certificate"></i> ISO 9001:2024</span>
+            <span class="marquee-item"><i class="fas fa-certificate"></i> IATF 16949</span>
+            <span class="marquee-item"><i class="fas fa-certificate"></i> AS9100D</span>
+            <span class="marquee-item"><i class="fas fa-shield-alt"></i> 200,000+ Products</span>
+            <span class="marquee-item"><i class="fas fa-truck"></i> Pan‑India Delivery</span>
+            <span class="marquee-item"><i class="fas fa-microchip"></i> Industry 4.0 Ready</span>
+        </div></div>
+    </section>
+
+    <!-- ===== PRODUCT GRID ===== -->
+    <section class="products-grid-section" id="products" aria-labelledby="products-heading">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <h2 id="products-heading" class="section-title" id="listingTitle">All <span>Products</span></h2>
+                    <p class="section-sub" id="listingSub">Browse our complete range of precision fasteners.</p>
+                </div>
+                <div class="filter-buttons" id="filterButtons" role="tablist" aria-label="Filter products">
+                    <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+                    <button class="filter-btn" data-filter="screws" role="tab" aria-selected="false">Screws</button>
+                    <button class="filter-btn" data-filter="nuts" role="tab" aria-selected="false">Nuts</button>
+                    <button class="filter-btn" data-filter="washers" role="tab" aria-selected="false">Washers</button>
+                    <button class="filter-btn" data-filter="pins" role="tab" aria-selected="false">Pins</button>
+                </div>
+            </div>
+            <div class="product-grid" id="productGrid" role="list">
+                <!-- Products rendered by JS -->
+            </div>
+            <div id="noProductsMessage" class="no-products" style="display:none;">No products found.</div>
+        </div>
+    </section>
+
+    <!-- ===== APPLICATIONS ===== -->
+    <section class="applications-section" id="applications" aria-labelledby="apps-heading">
+        <div class="container">
+            <h2 id="apps-heading" class="section-title">Applications <span>We Serve</span></h2>
+            <p class="section-sub">Precision fastening solutions engineered for the world's most demanding industries.</p>
+            <div class="applications-grid">
+                <div class="app-card" data-aos="fade-up"><i class="fas fa-car"></i><h4>Automotive</h4><p>Engine, chassis, interior</p></div>
+                <div class="app-card" data-aos="fade-up" data-aos-delay="50"><i class="fas fa-rocket"></i><h4>Aerospace</h4><p>Airframe, engines, avionics</p></div>
+                <div class="app-card" data-aos="fade-up" data-aos-delay="100"><i class="fas fa-microchip"></i><h4>Electronics</h4><p>PCBA, enclosures, connectors</p></div>
+                <div class="app-card" data-aos="fade-up" data-aos-delay="150"><i class="fas fa-building"></i><h4>Construction</h4><p>Structural, steel, concrete</p></div>
+                <div class="app-card" data-aos="fade-up" data-aos-delay="200"><i class="fas fa-bolt"></i><h4>Energy</h4><p>Renewable, oil &amp; gas, nuclear</p></div>
+                <div class="app-card" data-aos="fade-up" data-aos-delay="250"><i class="fas fa-train"></i><h4>Railway</h4><p>Rolling stock, track, signaling</p></div>
+                <div class="app-card" data-aos="fade-up" data-aos-delay="300"><i class="fas fa-shield-halved"></i><h4>Defense</h4><p>Vehicles, weapons, comms</p></div>
+                <div class="app-card" data-aos="fade-up" data-aos-delay="350"><i class="fas fa-flask"></i><h4>Medical</h4><p>Devices, implants, instruments</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WHY CHOOSE US ===== -->
+    <section class="why-section" id="why" aria-labelledby="why-heading">
+        <div class="container">
+            <h2 id="why-heading" class="section-title" style="color:#fff;">Why <span style="color:var(--gold);">Centum</span></h2>
+            <p class="section-sub" style="color:rgba(255,255,255,0.5);">Built on quality, precision, and trust — delivering excellence across every fastener.</p>
+            <div class="why-grid">
+                <div class="why-item" data-aos="fade-up"><div class="number" data-count="200000">200,000+</div><div class="label">Products in Stock</div><div class="desc">Standard &amp; branded parts</div></div>
+                <div class="why-item" data-aos="fade-up" data-aos-delay="100"><div class="number" data-count="98">98%</div><div class="label">On‑Time Delivery</div><div class="desc">Pan‑India distribution</div></div>
+                <div class="why-item" data-aos="fade-up" data-aos-delay="200"><div class="number" data-count="4">4</div><div class="label">ISO Certifications</div><div class="desc">9001 · IATF · AS9100 · 14001</div></div>
+                <div class="why-item" data-aos="fade-up" data-aos-delay="300"><div class="number" data-count="500">500+</div><div class="label">Engineering Partners</div><div class="desc">Global OEM &amp; tier‑1 suppliers</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" id="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>Fasteners Database</h4>
+                    <ul>
+                        <li><a href="#" data-scroll="hero" class="footer-link">About us</a></li>
+                        <li><a href="#" data-scroll="hero" class="footer-link">Careers</a></li>
+                        <li><a href="#" data-scroll="footer" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="#" data-filter="screws" class="footer-link">Screws</a></li>
+                        <li><a href="#" data-filter="nuts" class="footer-link">Nuts</a></li>
+                        <li><a href="#" data-filter="washers" class="footer-link">Washers</a></li>
+                        <li><a href="#" data-filter="pins" class="footer-link">Pins</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#" data-scroll="applications" class="footer-link">Applications</a></li>
+                        <li><a href="#" data-scroll="why" class="footer-link">Why Us</a></li>
+                        <li><a href="#" data-scroll="hero" class="footer-link">Sustainability</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Centum</h4>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-phone"></i> +91 80 1234 5678</a></li>
+                        <li><a href="#"><i class="fas fa-envelope"></i> info@centumfasteners.com</a></li>
+                        <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Centum Electronics Limited &middot;
+                <a href="#" data-scroll="hero" class="footer-link">Privacy Policy</a> &middot;
+                <a href="#" data-scroll="hero" class="footer-link">Cookie Settings</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+    MODALS (Added for bug fixes)
+    ============================================ -->
+
+    <!-- Detail Modal -->
+    <div class="modal-overlay" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-box">
+            <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+            <img class="modal-image" id="modalImage" src="" alt="Product image" />
+            <h3 id="modal-title">Product Name</h3>
+            <div class="modal-stock" id="modalStock">In Stock</div>
+            <div class="modal-grid" id="modalDetails">
+                <div><span class="label">SKU:</span> <span class="value" id="modalSku">-</span></div>
+                <div><span class="label">Material:</span> <span class="value" id="modalMaterial">-</span></div>
+                <div><span class="label">Dimensions:</span> <span class="value" id="modalDimensions">-</span></div>
+                <div><span class="label">Finish:</span> <span class="value" id="modalFinish">-</span></div>
+                <div><span class="label">Category:</span> <span class="value" id="modalCategory">-</span></div>
+                <div><span class="label">Applications:</span> <span class="value" id="modalApplications">-</span></div>
+            </div>
+            <div style="margin-top:12px;"><button class="btn-category" id="modalCopySku" style="background:var(--navy);color:#fff;">Copy SKU</button></div>
+        </div>
+    </div>
+
+    <!-- Image Preview Modal -->
+    <div class="modal-overlay image-preview-modal" id="imagePreviewModal" role="dialog" aria-modal="true">
+        <div class="modal-box" style="position:relative;">
+            <button class="preview-close" id="previewClose" aria-label="Close image preview">&times;</button>
+            <img class="preview-image" id="previewImage" src="" alt="Product image preview" />
+            <div class="preview-controls">
+                <button id="previewPrev" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+                <button id="previewNext" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== BACK TO TOP ===== -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+    <!-- ===== TOAST ===== -->
+    <div class="toast" id="toast"></div>
+
+    <!-- ============================================
+    SCRIPTS (BUG FIXES ONLY)
+    ============================================ -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // =============================================
+        // PRODUCT DATA – KEEP EXACTLY 20 PRODUCTS
+        // DO NOT MODIFY
+        // =============================================
+        const productsData = [
+            // Screws (5)
+            { id: 1, name: 'Hex Head Machine Screw', sku: 'SC-101', category: 'screws', desc: 'M8 x 25mm, Grade 8.8, zinc plated', image: 'screws/screw1.webp', material: 'Steel Grade 8.8', dimensions: 'M8 x 25mm', finish: 'Zinc plated', standard: 'DIN 933', applications: 'Automotive, Machinery' },
+            { id: 2, name: 'Socket Cap Screw', sku: 'SC-102', category: 'screws', desc: 'M6 x 16mm, alloy steel, black oxide', image: 'screws/screw2.webp', material: 'Alloy Steel', dimensions: 'M6 x 16mm', finish: 'Black oxide', standard: 'DIN 912', applications: 'Electronics, Precision' },
+            { id: 3, name: 'Self‑Tapping Screw', sku: 'SC-103', category: 'screws', desc: '4.2 x 13mm, pan head, galvanized', image: 'screws/screw3.webp', material: 'Steel', dimensions: '4.2 x 13mm', finish: 'Galvanized', standard: 'DIN 7981', applications: 'Sheet metal, Construction' },
+            { id: 4, name: 'Countersunk Screw', sku: 'SC-104', category: 'screws', desc: 'M5 x 20mm, stainless steel 304', image: 'screws/screw4.webp', material: 'Stainless Steel 304', dimensions: 'M5 x 20mm', finish: 'Natural', standard: 'DIN 7991', applications: 'Aerospace, Marine' },
+            { id: 5, name: 'Shoulder Screw', sku: 'SC-105', category: 'screws', desc: 'M10 x 30mm, hardened steel', image: 'screws/screw5.webp', material: 'Hardened Steel', dimensions: 'M10 x 30mm', finish: 'Zinc plated', standard: 'ISO 7379', applications: 'Automotive, Jigs' },
+            // Nuts (5)
+            { id: 6, name: 'Hex Nut', sku: 'NT-201', category: 'nuts', desc: 'M8, steel, zinc plated, DIN 934', image: 'nuts/nuts1.webp', material: 'Steel', dimensions: 'M8', finish: 'Zinc plated', standard: 'DIN 934', applications: 'General, Construction' },
+            { id: 7, name: 'Lock Nut (Nyloc)', sku: 'NT-202', category: 'nuts', desc: 'M10, nylon insert, ISO 7040', image: 'nuts/nuts2.webp', material: 'Steel with Nylon', dimensions: 'M10', finish: 'Zinc plated', standard: 'ISO 7040', applications: 'Vibration-prone, Automotive' },
+            { id: 8, name: 'Wing Nut', sku: 'NT-203', category: 'nuts', desc: 'M6, brass, for quick adjustments', image: 'nuts/nuts3.webp', material: 'Brass', dimensions: 'M6', finish: 'Natural', standard: 'DIN 315', applications: 'Furniture, Hand tools' },
+            { id: 9, name: 'Flange Nut', sku: 'NT-204', category: 'nuts', desc: 'M12, serrated flange, grade 8', image: 'nuts/nuts4.webp', material: 'Steel Grade 8', dimensions: 'M12', finish: 'Zinc plated', standard: 'DIN 6923', applications: 'Heavy machinery, Automotive' },
+            { id: 10, name: 'Cap Nut', sku: 'NT-205', category: 'nuts', desc: 'M8, stainless steel, decorative finish', image: 'nuts/nuts5.webp', material: 'Stainless Steel 304', dimensions: 'M8', finish: 'Polished', standard: 'DIN 917', applications: 'Architectural, Furniture' },
+            // Washers (5)
+            { id: 11, name: 'Flat Washer', sku: 'WS-301', category: 'washers', desc: 'M8, mild steel, bright zinc', image: 'washers/washer1.webp', material: 'Mild Steel', dimensions: 'M8', finish: 'Bright zinc', standard: 'DIN 125', applications: 'General, Construction' },
+            { id: 12, name: 'Spring Washer', sku: 'WS-302', category: 'washers', desc: 'M10, hardened, DIN 127', image: 'washers/washer2.webp', material: 'Hardened Steel', dimensions: 'M10', finish: 'Zinc plated', standard: 'DIN 127', applications: 'Vibration, Automotive' },
+            { id: 13, name: 'Split Lock Washer', sku: 'WS-303', category: 'washers', desc: 'M6, steel, corrosion resistant', image: 'washers/washer3.webp', material: 'Steel', dimensions: 'M6', finish: 'Corrosion resistant', standard: 'DIN 127', applications: 'General, Machinery' },
+            { id: 14, name: 'Fender Washer', sku: 'WS-304', category: 'washers', desc: 'M12, large OD, stainless steel', image: 'washers/washer4.webp', material: 'Stainless Steel 304', dimensions: 'M12', finish: 'Natural', standard: 'DIN 9021', applications: 'Automotive, Construction' },
+            { id: 15, name: 'Belleville Washer', sku: 'WS-305', category: 'washers', desc: 'M8, conical spring, high load', image: 'washers/washer5.webp', material: 'Spring Steel', dimensions: 'M8', finish: 'Zinc plated', standard: 'DIN 2093', applications: 'Heavy load, Bolting' },
+            // Pins (5)
+            { id: 16, name: 'Cotter Pin', sku: 'PN-401', category: 'pins', desc: '3 x 40mm, steel, zinc plated', image: 'pins/pins1.webp', material: 'Steel', dimensions: '3 x 40mm', finish: 'Zinc plated', standard: 'DIN 94', applications: 'Safety, Automotive' },
+            { id: 17, name: 'Dowel Pin', sku: 'PN-402', category: 'pins', desc: '6 x 30mm, hardened steel, ground', image: 'pins/pins2.webp', material: 'Hardened Steel', dimensions: '6 x 30mm', finish: 'Ground', standard: 'DIN 7979', applications: 'Alignment, Jigs' },
+            { id: 18, name: 'Clevis Pin', sku: 'PN-403', category: 'pins', desc: '10 x 60mm, with cotter hole', image: 'pins/pins3.webp', material: 'Steel', dimensions: '10 x 60mm', finish: 'Zinc plated', standard: 'DIN 1444', applications: 'Hinges, Linkages' },
+            { id: 19, name: 'Spring Pin (Roll Pin)', sku: 'PN-404', category: 'pins', desc: '5 x 20mm, carbon steel', image: 'pins/pins4.webp', material: 'Carbon Steel', dimensions: '5 x 20mm', finish: 'Zinc plated', standard: 'DIN 1481', applications: 'Mechanical joints' },
+            { id: 20, name: 'Taper Pin', sku: 'PN-405', category: 'pins', desc: 'M6, stainless, self‑locking', image: 'pins/pins5.webp', material: 'Stainless Steel 304', dimensions: 'M6', finish: 'Natural', standard: 'DIN 1', applications: 'Aerospace, Defense' }
+        ];
+
+        // =============================================
+        // STATE
+        // =============================================
+        let currentFilter = 'all';
+        let searchTerm = '';
+        let previewIndex = 0;
+        let previewProducts = [];
+
+        // =============================================
+        // DOM REFS
+        // =============================================
+        const grid = document.getElementById('productGrid');
+        const noMsg = document.getElementById('noProductsMessage');
+        const title = document.getElementById('listingTitle');
+        const sub = document.getElementById('listingSub');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const detailModal = document.getElementById('detailModal');
+        const imagePreviewModal = document.getElementById('imagePreviewModal');
+        const backToTop = document.getElementById('backToTop');
+        const scrollProgress = document.getElementById('scrollProgress');
+        const toast = document.getElementById('toast');
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+
+        // =============================================
+        // RENDER PRODUCTS – USING EXISTING CARDS (NO REBUILD)
+        // =============================================
+        function renderProducts() {
+            // Build product cards once if grid is empty
+            if (grid.children.length === 0) {
+                productsData.forEach(p => {
+                    const card = createProductCard(p);
+                    grid.appendChild(card);
+                });
+            }
+
+            // Now filter: show/hide based on current filter and search
+            const cards = grid.querySelectorAll('.product-card');
+            let visibleCount = 0;
+            const searchLower = searchTerm.toLowerCase().trim();
+
+            cards.forEach(card => {
+                const sku = card.dataset.sku || '';
+                const name = card.dataset.name || '';
+                const desc = card.dataset.desc || '';
+                const category = card.dataset.category || '';
+
+                const matchesFilter = currentFilter === 'all' || category === currentFilter;
+                const matchesSearch = searchTerm === '' ||
+                    name.toLowerCase().includes(searchLower) ||
+                    sku.toLowerCase().includes(searchLower) ||
+                    desc.toLowerCase().includes(searchLower);
+
+                const visible = matchesFilter && matchesSearch;
+                card.style.display = visible ? '' : 'none';
+                if (visible) visibleCount++;
+            });
+
+            // Update count and title
+            const categoryNames = {
+                all: 'All Products',
+                screws: 'Screws',
+                nuts: 'Nuts',
+                washers: 'Washers',
+                pins: 'Pins'
+            };
+            const catLabel = categoryNames[currentFilter] || 'Products';
+            title.innerHTML = catLabel + ' <span>Collection</span>';
+            sub.textContent = `Showing ${visibleCount} product${visibleCount !== 1 ? 's' : ''} in this category.`;
+
+            // Show no products message if needed
+            if (visibleCount === 0) {
+                noMsg.style.display = 'block';
+            } else {
+                noMsg.style.display = 'none';
+            }
+
+            // Update filter buttons active state
+            filterBtns.forEach(btn => {
+                const isActive = btn.dataset.filter === currentFilter;
+                btn.classList.toggle('active', isActive);
+                btn.setAttribute('aria-selected', isActive);
+            });
+        }
+
+        function createProductCard(p) {
+            const card = document.createElement('div');
+            card.className = 'product-card';
+            card.setAttribute('role', 'listitem');
+            card.dataset.sku = p.sku;
+            card.dataset.name = p.name;
+            card.dataset.desc = p.desc;
+            card.dataset.category = p.category;
+            card.dataset.id = p.id;
+
+            const catIcon = p.category === 'screws' ? 'fa-bolt' :
+                            p.category === 'nuts' ? 'fa-circle-notch' :
+                            p.category === 'washers' ? 'fa-circle' : 'fa-arrows-up-down';
+
+            card.innerHTML = `
+                <div class="image-wrap" data-id="${p.id}" data-action="image">
+                    <img src="${p.image || 'screws/screw1.webp'}" alt="${p.name}" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22200%22%3E%3Crect fill=%22%23f1f5f9%22 width=%22300%22 height=%22200%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2220%22 fill=%22%2394a3b8%22 text-anchor=%22middle%22 dy=%22.3em%22%3E${p.sku}%3C/text%3E%3C/svg%3E'" />
+                    <span class="badge-stock"><i class="fas fa-check-circle"></i> In Stock</span>
+                    <span class="badge-category"><i class="fas ${catIcon}"></i> ${p.category}</span>
+                </div>
+                <div class="info">
+                    <h4>${p.name}</h4>
+                    <div class="sku">${p.sku}</div>
+                    <div class="desc">${p.desc}</div>
+                    <div class="card-actions">
+                        <button class="btn-sm" data-id="${p.id}" data-action="quickview">Quick View</button>
+                        <button class="spec-toggle" data-id="${p.id}" data-action="specs" aria-label="View specifications"><i class="fas fa-chart-simple"></i></button>
+                    </div>
+                </div>
+            `;
+            return card;
+        }
+
+        // =============================================
+        // FILTER & SEARCH
+        // =============================================
+        function filterCategory(category, scrollToProducts = true) {
+            currentFilter = category;
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput) {
+                searchTerm = searchInput.value;
+            }
+            renderProducts();
+            if (scrollToProducts) {
+                scrollToSection('products');
+            }
+        }
+
+        function handleSearch() {
+            const input = document.getElementById('searchInput');
+            if (input) {
+                searchTerm = input.value;
+                renderProducts();
+            }
+        }
+
+        // =============================================
+        // MODALS (BUG FIXES)
+        // =============================================
+        function openDetailModal(productId) {
+            const p = productsData.find(pr => pr.id === productId);
+            if (!p) return;
+            document.getElementById('modalImage').src = p.image || 'screws/screw1.webp';
+            document.getElementById('modalImage').alt = p.name;
+            document.getElementById('modal-title').textContent = p.name;
+            document.getElementById('modalSku').textContent = p.sku;
+            document.getElementById('modalMaterial').textContent = p.material || '—';
+            document.getElementById('modalDimensions').textContent = p.dimensions || '—';
+            document.getElementById('modalFinish').textContent = p.finish || '—';
+            document.getElementById('modalCategory').textContent = p.category.charAt(0).toUpperCase() + p.category.slice(1);
+            document.getElementById('modalApplications').textContent = p.applications || '—';
+            document.getElementById('modalStock').textContent = 'In Stock';
+            document.getElementById('modalStock').className = 'modal-stock';
+            detailModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDetailModal() {
+            detailModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function openImagePreview(productId) {
+            const p = productsData.find(pr => pr.id === productId);
+            if (!p) return;
+            previewProducts = productsData.filter(pr => pr.category === p.category);
+            if (previewProducts.length === 0) previewProducts = [p];
+            previewIndex = previewProducts.findIndex(pr => pr.id === p.id);
+            if (previewIndex === -1) previewIndex = 0;
+            updatePreviewImage();
+            imagePreviewModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function updatePreviewImage() {
+            const p = previewProducts[previewIndex];
+            if (!p) return;
+            document.getElementById('previewImage').src = p.image || 'screws/screw1.webp';
+            document.getElementById('previewImage').alt = p.name;
+        }
+
+        function closeImagePreview() {
+            imagePreviewModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function previewPrev() {
+            if (previewProducts.length === 0) return;
+            previewIndex = (previewIndex - 1 + previewProducts.length) % previewProducts.length;
+            updatePreviewImage();
+        }
+
+        function previewNext() {
+            if (previewProducts.length === 0) return;
+            previewIndex = (previewIndex + 1) % previewProducts.length;
+            updatePreviewImage();
+        }
+
+        // =============================================
+        // TOAST
+        // =============================================
+        let toastTimeout;
+
+        function showToast(message) {
+            toast.textContent = message;
+            toast.classList.add('show');
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => toast.classList.remove('show'), 2500);
+        }
+
+        // =============================================
+        // SCROLL HELPERS
+        // =============================================
+        function scrollToSection(id) {
+            const target = document.getElementById(id);
+            if (target) {
+                const offset = 80;
+                const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({ top, behavior: 'smooth' });
+            }
+        }
+
+        // =============================================
+        // BACK TO TOP & PROGRESS
+        // =============================================
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            scrollProgress.style.width = progress + '%';
+            backToTop.classList.toggle('visible', scrollTop > 300);
+        });
+
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // =============================================
+        // HAMBURGER
+        // =============================================
+        function toggleMenu(open) {
+            const isOpen = open !== undefined ? open : mobileMenu.classList.contains('open');
+            if (isOpen) {
+                mobileMenu.classList.remove('open');
+                menuOverlay.classList.remove('active');
+                hamburger.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+            } else {
+                mobileMenu.classList.add('open');
+                menuOverlay.classList.add('active');
+                hamburger.classList.add('active');
+                hamburger.setAttribute('aria-expanded', 'true');
+            }
+        }
+
+        hamburger.addEventListener('click', () => toggleMenu());
+        menuOverlay.addEventListener('click', () => toggleMenu(true));
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => toggleMenu(true));
+        });
+
+        // =============================================
+        // NAVIGATION LINKS (FIXED)
+        // =============================================
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = link.getAttribute('href');
+                if (target && target.startsWith('#')) {
+                    scrollToSection(target.substring(1));
+                }
+                toggleMenu(true); // close mobile menu
+            });
+        });
+
+        // =============================================
+        // EVENT DELEGATION (FIXED)
+        // =============================================
+        document.addEventListener('click', (e) => {
+            const target = e.target.closest('[data-action]') ||
+                           e.target.closest('[data-filter]') ||
+                           e.target.closest('[data-scroll]') ||
+                           e.target.closest('.footer-link') ||
+                           e.target.closest('.btn-category[data-filter]');
+
+            // Quick View
+            if (target && target.dataset.action === 'quickview') {
+                e.preventDefault();
+                const id = parseInt(target.dataset.id);
+                openDetailModal(id);
+                return;
+            }
+
+            // Specs
+            if (target && target.dataset.action === 'specs') {
+                e.preventDefault();
+                const id = parseInt(target.dataset.id);
+                openDetailModal(id);
+                return;
+            }
+
+            // Image click
+            if (target && target.dataset.action === 'image') {
+                const id = parseInt(target.dataset.id);
+                openImagePreview(id);
+                return;
+            }
+
+            // Category filter (showcase buttons)
+            if (target && target.dataset.filter) {
+                e.preventDefault();
+                const filter = target.dataset.filter;
+                currentFilter = filter;
+                const searchInput = document.getElementById('searchInput');
+                if (searchInput) searchTerm = searchInput.value;
+                renderProducts();
+                scrollToSection('products');
+                return;
+            }
+
+            // Scroll links (hero buttons, etc.)
+            if (target && target.dataset.scroll) {
+                e.preventDefault();
+                scrollToSection(target.dataset.scroll);
+                return;
+            }
+
+            // Footer links
+            if (target && target.classList && target.classList.contains('footer-link')) {
+                e.preventDefault();
+                if (target.dataset.filter) {
+                    currentFilter = target.dataset.filter;
+                    const searchInput = document.getElementById('searchInput');
+                    if (searchInput) searchTerm = searchInput.value;
+                    renderProducts();
+                    scrollToSection('products');
+                } else if (target.dataset.scroll) {
+                    scrollToSection(target.dataset.scroll);
+                }
+                return;
+            }
+
+            // Special: "Learn More"
+            if (target && target.dataset.special) {
+                e.preventDefault();
+                showToast('Contact our engineering team for custom solutions.');
+                return;
+            }
+        });
+
+        // =============================================
+        // MODAL CONTROLS
+        // =============================================
+        document.getElementById('modalClose').addEventListener('click', closeDetailModal);
+        document.getElementById('previewClose').addEventListener('click', closeImagePreview);
+        document.getElementById('previewPrev').addEventListener('click', previewPrev);
+        document.getElementById('previewNext').addEventListener('click', previewNext);
+
+        detailModal.addEventListener('click', (e) => {
+            if (e.target === detailModal) closeDetailModal();
+        });
+        imagePreviewModal.addEventListener('click', (e) => {
+            if (e.target === imagePreviewModal) closeImagePreview();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                if (detailModal.classList.contains('active')) closeDetailModal();
+                if (imagePreviewModal.classList.contains('active')) closeImagePreview();
+            }
+            if (imagePreviewModal.classList.contains('active')) {
+                if (e.key === 'ArrowLeft') previewPrev();
+                if (e.key === 'ArrowRight') previewNext();
+            }
+        });
+
+        document.getElementById('modalCopySku').addEventListener('click', () => {
+            const sku = document.getElementById('modalSku').textContent;
+            if (sku && sku !== '-') {
+                navigator.clipboard.writeText(sku).then(() => {
+                    showToast('SKU copied to clipboard!');
+                }).catch(() => {
+                    const textArea = document.createElement('textarea');
+                    textArea.value = sku;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    showToast('SKU copied to clipboard!');
+                });
+            }
+        });
+
+        // =============================================
+        // SEARCH INPUT
+        // =============================================
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+            let debounceTimer;
+            searchInput.addEventListener('input', () => {
+                clearTimeout(debounceTimer);
+                debounceTimer = setTimeout(handleSearch, 200);
+            });
+        }
+
+        // =============================================
+        // FILTER BUTTONS (existing)
+        // =============================================
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.dataset.filter;
+                currentFilter = filter;
+                const searchInput = document.getElementById('searchInput');
+                if (searchInput) searchTerm = searchInput.value;
+                renderProducts();
+            });
+        });
+
+        // =============================================
+        // INIT
+        // =============================================
+        AOS.init({ once: true, duration: 700, offset: 50 });
+        renderProducts();
+
+        // Highlight active section in nav
+        const sections = ['hero', 'showcase1', 'showcase2', 'showcase3', 'products', 'applications', 'why'];
+        const navLinks = document.querySelectorAll('.header-nav a[data-section], .mobile-menu a[data-section]');
+        let lastSection = 'hero';
+        window.addEventListener('scroll', () => {
+            let current = 'hero';
+            sections.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top <= 120) current = id;
+                }
+            });
+            if (current !== lastSection) {
+                navLinks.forEach(link => {
+                    const section = link.dataset.section;
+                    link.style.color = section === current ? '#EAB308' : 'rgba(255,255,255,0.7)';
+                });
+                lastSection = current;
+            }
+        });
+
+        console.log('✅ All functionality restored.');
+        console.log('📦 ' + productsData.length + ' products preserved.');
+        console.log('🔍 Quick View → Modal | Image → Preview | Filters → toggle visibility.');
+        console.log('🔗 All links scroll/filter correctly.');
+    </script>
+</body>
+</html>
